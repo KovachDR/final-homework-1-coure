@@ -16,53 +16,14 @@ public class Main {
         employees[9] = new Employee("Антонов Антон Антонович", 5, 65000);
 
         printInfo();
-
-//        for (Employee employee : employees) {
-//            System.out.println(employee);
-//        }
-
+        delimiter();
         calculationTotalSalaryAndAverageSalary();
-//        int totalSalaryInMonth = 0;
-//        for (Employee employee : employees) {
-//            totalSalaryInMonth = totalSalaryInMonth + employee.getSalary();
-//        }
-//        System.out.println("Сумма затрат на зарплаты в месяц составляет " + totalSalaryInMonth);
-
+        delimiter();
         checkMinSalary();
-//        int minSalary = employees[0].getSalary();
-//        for (int i = 0; i < employees.length; i++) {
-//            if (employees[i].getSalary() < minSalary) {
-//                minSalary = employees[i].getSalary();
-//            }
-//        }
-//        for (int i = 0; i < employees.length; i++) {
-//            if (minSalary == employees[i].getSalary()) {
-//                System.out.println("Минимальную зарплату получает " + employees[i]);
-//            }
-//        }
-
+        delimiter();
         checkMaxSalary();
-//        int maxSalary = employees[0].getSalary();
-//        for (int i = 0; i < employees.length; i++) {
-//            if (employees[i].getSalary() > maxSalary) {
-//                maxSalary = employees[i].getSalary();
-//            }
-//        }
-//        for (int i = 0; i < employees.length; i++) {
-//            if (maxSalary == employees[i].getSalary()) {
-//                System.out.println("Максимальную зарплату получает " + employees[i]);
-//            }
-//        }
-
-//        double averageSalary = calculationTotalSalary() / employees.length;
-//        System.out.println(averageSalary);
-
-
-
-getNamesOfEmployees();
-        //        for (Employee employee : employees){
-//            System.out.println(employee.getName());
-//        }
+        delimiter();
+        getNamesOfEmployees();
     }
     public static void printInfo(){
         for (Employee employee : employees) {
@@ -104,7 +65,6 @@ getNamesOfEmployees();
             }
         }
     }
-
     public static void getNamesOfEmployees() {
         for (Employee employee : employees){
             System.out.println(employee.getName());
