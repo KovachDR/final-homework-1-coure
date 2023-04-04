@@ -1,13 +1,13 @@
-package baseDifficulty;
+package highDifficulty;
 
 public class Employee {
     private final String name;
     private int department;
-    private int salary;
+    private double salary;
     private int id;
     private static int counter = 1;
 
-    public Employee(String name, int department, int salary) {
+    public Employee(String name, int department, double salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
@@ -22,7 +22,7 @@ public class Employee {
     public void setDepartment(int department) {
         this.department = department;
     }
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
     public String getName() {
@@ -31,7 +31,7 @@ public class Employee {
     public int getDepartment() {
         return department;
     }
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
     public static int getCounter() {
