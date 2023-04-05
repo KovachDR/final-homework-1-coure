@@ -1,8 +1,6 @@
 package baseDifficulty;
-
 public class Main {
     static Employee[] employees = new Employee[10];
-
     public static void main(String[] args) {
         employees[0] = new Employee("Иванов Иван Иванович", 1, 50000);
         employees[1] = new Employee("Сергеев Сергей Сергеевич", 2, 55000);
@@ -17,11 +15,13 @@ public class Main {
 
         printInfo();
         delimiter();
-        calculationTotalSalaryAndAverageSalary();
+        System.out.println("Сумма затрат на зарплаты в месяц составляет " + calculationTotalSalary());
         delimiter();
-        checkMinSalary();
+        System.out.println("Минимальную зарплату получает " + checkMinSalary());
         delimiter();
-        checkMaxSalary();
+        System.out.println("Максимальную зарплату получает " + checkMaxSalary());
+        delimiter();
+        System.out.println("Среднее значение зарплат составляет " + calculationAverageSalary());
         delimiter();
         getNamesOfEmployees();
     }
@@ -30,40 +30,43 @@ public class Main {
             System.out.println(employee);
         }
     }
-    public static void calculationTotalSalaryAndAverageSalary() {
+    public static int calculationTotalSalary() {
         int totalSalaryInMonth = 0;
         for (Employee employee : employees) {
             totalSalaryInMonth = totalSalaryInMonth + employee.getSalary();
         }
-        System.out.println("Сумма затрат на зарплаты в месяц составляет - " + totalSalaryInMonth);
-        double averageSalary = (double) totalSalaryInMonth / employees.length;
-        System.out.println("Средняя зарплата составляет - " + averageSalary);
+        return totalSalaryInMonth;
     }
-    public static void checkMinSalary () {
+    public static double calculationAverageSalary(){
+        double averageSalary;
+        averageSalary = (double) calculationTotalSalary() / employees.length;
+        return averageSalary;
+    }
+    public static Employee checkMinSalary () {
+        Employee employeeWithMinSalary = null;
         int minSalary = employees[0].getSalary();
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < minSalary) {
-                minSalary = employees[i].getSalary();
+        for (Employee employee : employees) {
+            if(minSalary > employee.getSalary()){
+                minSalary = employee.getSalary();
+            }
+            if (minSalary == employee.getSalary()){
+                employeeWithMinSalary = employee;
             }
         }
-        for (int i = 0; i < employees.length; i++) {
-            if (minSalary == employees[i].getSalary()) {
-                System.out.println("Минимальную зарплату получает " + employees[i]);
-            }
-        }
+        return employeeWithMinSalary;
     }
-    public static void checkMaxSalary() {
+    public static Employee checkMaxSalary () {
+        Employee employeeWithMaxSalary = null;
         int maxSalary = employees[0].getSalary();
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() > maxSalary) {
-                maxSalary = employees[i].getSalary();
+        for (Employee employee : employees) {
+            if(maxSalary < employee.getSalary()){
+                maxSalary = employee.getSalary();
+            }
+            if (maxSalary == employee.getSalary()){
+                employeeWithMaxSalary = employee;
             }
         }
-        for (int i = 0; i < employees.length; i++) {
-            if (maxSalary == employees[i].getSalary()) {
-                System.out.println("Максимальную зарплату получает " + employees[i]);
-            }
-        }
+        return employeeWithMaxSalary;
     }
     public static void getNamesOfEmployees() {
         for (Employee employee : employees){
