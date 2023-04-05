@@ -34,13 +34,7 @@ public class Employee {
     public double getSalary() {
         return salary;
     }
-    public static int getCounter() {
-        return counter;
-    }
     public int getId() {
         return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
 }
