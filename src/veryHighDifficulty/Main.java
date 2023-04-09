@@ -3,7 +3,7 @@ package veryHighDifficulty;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 EmployeeBook employeeBook = new EmployeeBook(10);
         employeeBook.addEmployee(new Employee("Иванов Иван Иванович", 1, 50000));
         employeeBook.addEmployee(new Employee("Сергеев Сергей Сергеевич", 2, 55000));

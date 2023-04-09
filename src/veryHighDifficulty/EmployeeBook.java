@@ -122,7 +122,6 @@ public void printListEmployeesAllDepartments(){
     public void delimiter() {
         System.out.println("////////////////////////////////////////////////////");
     }
-
     public void indexSalary(double indexPercentage) {
         if (indexPercentage <= 0){
             throw new IllegalArgumentException("Введите в параметр значение больше нуля");

@@ -35,7 +35,6 @@ public class Employee {
     public void setName(String name) {
         this.name = name;
     }
-
     public int getDepartment() {
         return department;
     }
@@ -51,7 +50,6 @@ public class Employee {
     public void setId(int id) {
         this.id = id;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,7 +57,6 @@ public class Employee {
         Employee employee = (Employee) o;
         return Objects.equals(name, employee.name);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(name);
